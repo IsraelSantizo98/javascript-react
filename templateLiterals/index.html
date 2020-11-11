@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Literals - expresiones</title>
+</head>
+<body>
+    <script>
+        const nombre = 'Israel'
+        console.log(`Mi nombre es ${nombre}`)
+        console.log(`Mi nombre es ${29}`)
+        //String dentro de un string
+        console.log(`Mi nombre es ${'Hola'}`)
+        //Calculo interno, no muestra el nombre de la variable si no el valor nota no se le asigno un valor, se guarda en el navegador como window.s
+        console.log(`Mi nombre es ${x='jose'}`)
+        //Convertir la funcion auto ejecutable
+        console.log(`Mi nombre es ${(function name() {return 'Santos'})()}`)
+        //Arrow function
+        console.log(`Mi nombre es ${(() => {return 'Santos arrow'})()}`)
+        //Condicional con ternario con un if no se puede ejecutar porque no es una expresion
+        console.log(`Mi nombre es ${true && 'Israel Ternario'}`)
+        console.log(`Mi nombre es ${['a', 'b'].map(letra => `${letra}-styled`)}`)
+    </script>
+</body>
+</html>
