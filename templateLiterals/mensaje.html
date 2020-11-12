@@ -4,6 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tagged Templates</title>
+    <style>
+        body{ 
+            display: flex;
+            margin: 0; 
+            height: 100vh; 
+            justify-content: center; 
+            align-items: center; 
+            font-family: 'Times New Roman', Times, serif; 
+            background-color: #f49097; 
+            color: #f2f5ff; 
+            font-size: 2em; 
+            text-shadow: 1px 1px rgba(0, 0, 0, .5); } 
+        strong{ 
+            color: #f5e960; 
+            padding: .15em .4em; 
+            background: #dfb2f4; 
+            border-radius: 20px; 
+            border: 2px solid #f2f5ff; 
+        }
+    </style>
 </head>
 <body>
     <!-- <p>El trabajo duro supera el talento natual</p> -->
@@ -22,11 +42,16 @@
                 //const strong = dymanicValues[index] ? `<strong>${dymanicValues[index]}</strong>` : ''
                 //console.log(dymanicValues[index])
                 //console.log(string)
-                newContent = newContent + string + strong
+                //Forma normal
+                //newContent = newContent + string + strong
+                //Forma con template literals
+                newContent += `${string} ${strong}`
             });
-            console.log(newContent)
+            return `<p>${newContent}</p>`
+            //console.log(newContent)
         }
-        taggedTemplate`El ${'trabajo duro'} supera al ${'talento  natural'}`
+        const message = taggedTemplate`El ${'trabajo duro'} supera al ${'talento  natural'}`
+        document.body.innerHTML = message
     </script>
-</body>1
+</body>
 </html>
